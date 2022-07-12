@@ -29,7 +29,7 @@ namespace MoviesAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IInMemoryRepository, InMemoryRepository>();
+            services.AddSingleton<IInMemoryRepositoryService, InMemoryRepositoryService>();
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "MovieAPI", Version = "v1" });
