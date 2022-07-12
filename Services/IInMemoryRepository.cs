@@ -1,11 +1,12 @@
 ﻿using MoviesAPI.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MoviesAPI.Services
 {
     public interface IInMemoryRepository
     {
-        List<Genre> GetAllGenres();
+        Task<List<Genre>> GetAllGenres();
         Genre GetGenreById(int Id);
     }
 }

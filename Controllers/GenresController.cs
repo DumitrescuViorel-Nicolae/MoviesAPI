@@ -2,6 +2,7 @@
 using MoviesAPI.Models;
 using MoviesAPI.Services;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MoviesAPI.Controllers
 {
@@ -16,23 +17,16 @@ namespace MoviesAPI.Controllers
         }
 
         [HttpGet]
-        public List<Genre> Get()
+        public async Task<ActionResult<List<Genre>>> Get()
         {
-            return _repository.GetAllGenres();
+            return await _repository.GetAllGenres();
         }
 
         [HttpGet("{Id}")]
-        public Genre Get(int id)
+        public ActionResult<Genre> Get(int id)
         {
             var genre = _repository.GetGenreById(id);
             return genre;
         }
-
-        [HttpPost]
-        public void Post() { }
-        [HttpPut]
-        public void Put() { }
-        [HttpDelete]
-        public void Delete() { }
     }
 }

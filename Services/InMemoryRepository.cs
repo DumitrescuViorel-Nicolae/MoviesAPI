@@ -1,6 +1,7 @@
 ﻿using MoviesAPI.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace MoviesAPI.Services
 {
@@ -14,8 +15,9 @@ namespace MoviesAPI.Services
                 new Genre(){Id = 2, Name = "Drama"}
                 };
         }
-        public List<Genre> GetAllGenres()
+        public async Task<List<Genre>> GetAllGenres()
         {
+            await Task.Delay(3000);
             return _genres;
         }
 
